@@ -51,6 +51,8 @@
             // 
             // top_panel
             // 
+            top_panel.BackgroundImage = Properties.Resources.butt_background;
+            top_panel.BackgroundImageLayout = ImageLayout.Stretch;
             top_panel.BorderStyle = BorderStyle.FixedSingle;
             top_panel.Controls.Add(button4);
             top_panel.Controls.Add(button3);
@@ -71,7 +73,7 @@
             button4.Cursor = Cursors.Hand;
             button4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Image = Properties.Resources.top_Help_butt;
-            button4.Location = new Point(390, 11);
+            button4.Location = new Point(401, 11);
             button4.Name = "button4";
             button4.Size = new Size(97, 72);
             button4.TabIndex = 5;
@@ -250,6 +252,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Accounting Software";
             WindowState = FormWindowState.Maximized;
+            Load += MainFrm_Load;
             top_panel.ResumeLayout(false);
             bottom_panel.ResumeLayout(false);
             bottom_panel.PerformLayout();

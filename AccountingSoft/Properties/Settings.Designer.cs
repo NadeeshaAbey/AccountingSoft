@@ -22,5 +22,17 @@ namespace AccountingSoft.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int select_img_index {
+            get {
+                return ((int)(this["select_img_index"]));
+            }
+            set {
+                this["select_img_index"] = value;
+            }
+        }
     }
 }

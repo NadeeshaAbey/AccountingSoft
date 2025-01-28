@@ -22,10 +22,7 @@ namespace AccountingSoft
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
 
         private void min_button_Click(object sender, EventArgs e)
         {
@@ -69,6 +66,21 @@ namespace AccountingSoft
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //-----------
+            AccountingSoft.Properties.Settings.Default.select_img_index = background_comboBox.SelectedIndex;
+            AccountingSoft.Properties.Settings.Default.Save();
+            //-----------
+            this.Close();
+        }
+
+        private void MainFrm_Load(object sender, EventArgs e)
+        {
+            int index = AccountingSoft.Properties.Settings.Default.select_img_index;
+            background_comboBox.SelectedIndex = index;
         }
     }
 }
