@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             top_panel = new Panel();
             button4 = new Button();
             button3 = new Button();
@@ -36,7 +37,16 @@
             close_button = new Button();
             min_button = new Button();
             bottom_panel = new Panel();
+            date_time_label = new Label();
+            label2 = new Label();
+            user_label = new Label();
+            user_pictureBox = new PictureBox();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             top_panel.SuspendLayout();
+            bottom_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)user_pictureBox).BeginInit();
             SuspendLayout();
             // 
             // top_panel
@@ -142,11 +152,87 @@
             // bottom_panel
             // 
             bottom_panel.BorderStyle = BorderStyle.FixedSingle;
+            bottom_panel.Controls.Add(date_time_label);
+            bottom_panel.Controls.Add(label2);
+            bottom_panel.Controls.Add(user_label);
+            bottom_panel.Controls.Add(user_pictureBox);
+            bottom_panel.Controls.Add(comboBox1);
+            bottom_panel.Controls.Add(label1);
             bottom_panel.Dock = DockStyle.Bottom;
             bottom_panel.Location = new Point(0, 614);
             bottom_panel.Name = "bottom_panel";
             bottom_panel.Size = new Size(955, 40);
             bottom_panel.TabIndex = 1;
+            bottom_panel.Paint += bottom_panel_Paint;
+            // 
+            // date_time_label
+            // 
+            date_time_label.AutoSize = true;
+            date_time_label.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            date_time_label.Location = new Point(586, 4);
+            date_time_label.Name = "date_time_label";
+            date_time_label.Size = new Size(23, 31);
+            date_time_label.TabIndex = 7;
+            date_time_label.Text = "-";
+            date_time_label.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(464, 4);
+            label2.Name = "label2";
+            label2.Size = new Size(23, 31);
+            label2.TabIndex = 6;
+            label2.Text = "-";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // user_label
+            // 
+            user_label.AutoSize = true;
+            user_label.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            user_label.Location = new Point(332, 4);
+            user_label.Name = "user_label";
+            user_label.Size = new Size(23, 31);
+            user_label.TabIndex = 5;
+            user_label.Text = "-";
+            user_label.TextAlign = ContentAlignment.MiddleLeft;
+            user_label.Click += user_label_Click;
+            // 
+            // user_pictureBox
+            // 
+            user_pictureBox.BorderStyle = BorderStyle.FixedSingle;
+            user_pictureBox.Location = new Point(281, -1);
+            user_pictureBox.Name = "user_pictureBox";
+            user_pictureBox.Size = new Size(45, 40);
+            user_pictureBox.TabIndex = 4;
+            user_pictureBox.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Cursor = Cursors.Hand;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Image 1", "Image 2", "Image 3", "Image 4", "Image 5", "Image 6" });
+            comboBox1.Location = new Point(100, 7);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(95, 20);
+            label1.TabIndex = 2;
+            label1.Text = "Background :";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // MainFrm
             // 
@@ -163,6 +249,9 @@
             Text = "Accounting Software";
             WindowState = FormWindowState.Maximized;
             top_panel.ResumeLayout(false);
+            bottom_panel.ResumeLayout(false);
+            bottom_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)user_pictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -176,5 +265,12 @@
         private Button button4;
         private Button button2;
         private Button button3;
+        private ComboBox comboBox1;
+        private Label label1;
+        private PictureBox user_pictureBox;
+        private Label date_time_label;
+        private Label label2;
+        private Label user_label;
+        private System.Windows.Forms.Timer timer1;
     }
 }
