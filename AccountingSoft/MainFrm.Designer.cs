@@ -41,7 +41,7 @@
             label2 = new Label();
             user_label = new Label();
             user_pictureBox = new PictureBox();
-            comboBox1 = new ComboBox();
+            background_comboBox = new ComboBox();
             label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             top_panel.SuspendLayout();
@@ -156,7 +156,7 @@
             bottom_panel.Controls.Add(label2);
             bottom_panel.Controls.Add(user_label);
             bottom_panel.Controls.Add(user_pictureBox);
-            bottom_panel.Controls.Add(comboBox1);
+            bottom_panel.Controls.Add(background_comboBox);
             bottom_panel.Controls.Add(label1);
             bottom_panel.Dock = DockStyle.Bottom;
             bottom_panel.Location = new Point(0, 614);
@@ -208,16 +208,17 @@
             user_pictureBox.TabIndex = 4;
             user_pictureBox.TabStop = false;
             // 
-            // comboBox1
+            // background_comboBox
             // 
-            comboBox1.Cursor = Cursors.Hand;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Image 1", "Image 2", "Image 3", "Image 4", "Image 5", "Image 6" });
-            comboBox1.Location = new Point(100, 7);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 3;
+            background_comboBox.Cursor = Cursors.Hand;
+            background_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            background_comboBox.FormattingEnabled = true;
+            background_comboBox.Items.AddRange(new object[] { "Image 1", "Image 2", "Image 3", "Image 4", "Image 5", "Image 6" });
+            background_comboBox.Location = new Point(100, 7);
+            background_comboBox.Name = "background_comboBox";
+            background_comboBox.Size = new Size(151, 28);
+            background_comboBox.TabIndex = 3;
+            background_comboBox.SelectedIndexChanged += background_comboBox_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -238,6 +239,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(955, 654);
             Controls.Add(bottom_panel);
             Controls.Add(top_panel);
@@ -265,7 +267,7 @@
         private Button button4;
         private Button button2;
         private Button button3;
-        private ComboBox comboBox1;
+        private ComboBox background_comboBox;
         private Label label1;
         private PictureBox user_pictureBox;
         private Label date_time_label;

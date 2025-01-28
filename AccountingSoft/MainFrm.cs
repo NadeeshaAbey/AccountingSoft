@@ -56,5 +56,19 @@ namespace AccountingSoft
         {
             this.date_time_label.Text = DateTime.Now.Date.ToShortDateString() + " | " + DateTime.Now.ToLongTimeString();
         }
+
+        private void background_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string fn;
+                fn = Application.StartupPath+ "Data\\Pics\\" + background_comboBox.SelectedIndex.ToString() + ".jpg";
+                this.BackgroundImage = Image.FromFile(fn);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
