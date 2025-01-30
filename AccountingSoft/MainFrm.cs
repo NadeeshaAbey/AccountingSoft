@@ -22,7 +22,7 @@ namespace AccountingSoft
 
         }
 
-        
+
 
         private void min_button_Click(object sender, EventArgs e)
         {
@@ -59,7 +59,7 @@ namespace AccountingSoft
             try
             {
                 string fn;
-                fn = Application.StartupPath+ "Data\\Pics\\" + background_comboBox.SelectedIndex.ToString() + ".jpg";
+                fn = Application.StartupPath + "Data\\Pics\\" + background_comboBox.SelectedIndex.ToString() + ".jpg";
                 this.BackgroundImage = Image.FromFile(fn);
             }
             catch (Exception ex)
@@ -81,6 +81,36 @@ namespace AccountingSoft
         {
             int index = AccountingSoft.Properties.Settings.Default.select_img_index;
             background_comboBox.SelectedIndex = index;
+        }
+
+        private void expand_button_Click(object sender, EventArgs e)
+        {
+            this.treeView1.ExpandAll();
+        }
+
+        private void collapse_button_Click(object sender, EventArgs e)
+        {
+            this.treeView1.CollapseAll();
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void accounting_button_Click(object sender, EventArgs e)
+        {
+            if(this.tree_panel.Visible == true)
+            {
+                this.tree_panel.Visible = false;
+                this.tree_panel.Refresh();
+            }
+            else
+            {
+                this.tree_panel.Visible = true;
+                this.tree_panel.Refresh();
+                this.treeView1.ExpandAll();
+            }
         }
     }
 }

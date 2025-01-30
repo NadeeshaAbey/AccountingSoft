@@ -133,6 +133,16 @@ namespace AccountingSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap collapse1 {
+            get {
+                object obj = ResourceManager.GetObject("collapse1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Default_user {
             get {
                 object obj = ResourceManager.GetObject("Default_user", resourceCulture);
@@ -176,6 +186,16 @@ namespace AccountingSoft.Properties {
         internal static System.Drawing.Bitmap expand {
             get {
                 object obj = ResourceManager.GetObject("expand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap expand1 {
+            get {
+                object obj = ResourceManager.GetObject("expand1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
